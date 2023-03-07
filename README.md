@@ -1,16 +1,32 @@
-# rive_flutter_runtime_color_change_example
+# Rive Flutter Runtime Color Change Example
+This example demonstrates how you can make use of a custom Rive render object to dynamically change the color of components at runtime - while also respecting their opacity (alpha values) during animation.
 
-A new Flutter project.
+## Example
 
-## Getting Started
+This example changes the color of two shapes, by specifying the correct shape and fill names (as defined in the editor).
 
-This project is a starting point for a Flutter application.
+Example code:
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+RiveColorModifier(
+  artboard: _riveArtboard!,
+  fit: BoxFit.contain,
+  components: [
+    RiveColorComponent(
+      shapeName: 'box-shape-1',
+      fillName: 'box-fill-1',
+      color: Colors.purple,
+    ),
+    RiveColorComponent(
+      shapeName: 'box-shape-2',
+      fillName: 'box-fill-2',
+      color: Colors.green,
+    ),
+  ],
+),
+```
+Note that the **shape** and **fill** names need to be specified in order to find them at runtime.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![CleanShot 2023-03-07 at 14 24 24](https://user-images.githubusercontent.com/13705472/223434984-ce839e80-03d9-4f8b-aeee-8308975b3300.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/13705472/223434324-5bcc0d61-302f-4501-b978-68bd12eaa4f4.mp4
